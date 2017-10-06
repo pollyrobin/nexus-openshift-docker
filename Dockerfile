@@ -8,5 +8,5 @@ USER root
 COPY conf/nexus.xml ${SONATYPE_WORK}/conf/nexus.xml
 RUN chown -R nexus ${SONATYPE_WORK} && \
     chmod -R ugo+rw ${SONATYPE_WORK} && \
-    chmod -R nexus /sonatype-work
+    chown -R nexus /sonatype-work
 USER nexus
