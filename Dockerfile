@@ -10,3 +10,4 @@ RUN chown -R nexus ${SONATYPE_WORK} && \
     #chmod -R ugo+rw ${SONATYPE_WORK} 
     chmod -R 777 ${SONATYPE_WORK} 
 USER nexus
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
