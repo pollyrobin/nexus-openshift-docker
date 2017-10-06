@@ -16,4 +16,4 @@ RUN chown -R nexus:nexus ${SONATYPE_WORK} && \
     chgrp -R 0 ${SONATYPE_WORK} && \
     chmod -R g=u ${SONATYPE_WORK}
 USER 200
-#CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
