@@ -7,5 +7,6 @@ ENV SONATYPE_WORK /sonatype-work
 USER root
 COPY conf/nexus.xml ${SONATYPE_WORK}/conf/nexus.xml
 RUN chown -R nexus ${SONATYPE_WORK} && \
-    chmod -R ugo+rw ${SONATYPE_WORK}
+    #chmod -R ugo+rw ${SONATYPE_WORK} 
+    chmod -R 777 ${SONATYPE_WORK} 
 USER nexus
