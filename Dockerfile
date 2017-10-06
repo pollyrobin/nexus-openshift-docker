@@ -6,10 +6,10 @@ ENV SONATYPE_WORK /sonatype-work
 
 USER root
 COPY conf/nexus.xml ${SONATYPE_WORK}/conf/nexus.xml
-RUN chown -R 1001 ${SONATYPE_WORK} && \
-    chown -R 1001 /opt/sonatype/nexus && \
+RUN chown -R nexus ${SONATYPE_WORK} && \
+    chown -R nexus /opt/sonatype/nexus && \
     #chmod -R ugo+rw ${SONATYPE_WORK} 
     chmod -R 777 ${SONATYPE_WORK} && \
     chmod -R 777 /opt/sonatype/nexus
-USER 1001
+USER nexus
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
